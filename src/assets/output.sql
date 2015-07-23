@@ -1,0 +1,4 @@
+use careerplacement;
+create table company (	companyid int   ,	companyname varchar(250),	companyaddress varchar(250),	companyreplastname varchar(255),	companyrepfirstname varchar(255),	companyurl varchar(255),	companydescription text,	datedeleted datetime,    isdeleted tinyint(1),    lastmodifieddate datetime   default current_timestamp,    dateadded datetime   default current_timestamp,	primary key(companyid));
+create  table job(	jobid int   ,	jobname varchar(255),	jobdescription text,	datedeleted datetime,    isdeleted tinyint(1),    lastmodifieddate datetime   default current_timestamp,    dateadded datetime   default current_timestamp,	primary key(jobid));
+create table message( messageid int   , subject varchar(256), content text, datedeleted datetime, isdeleted tinyint(1), lastmodifieddate datetime   default current_timestamp, dateadded datetime   default current_timestamp, userid int, foreign key   (userid) references  user(userid)  ,primary key(messageid));
